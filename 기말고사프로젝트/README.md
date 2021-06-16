@@ -20,6 +20,11 @@
   **<서버 코드 분석>**<br>
  <img width="" height="" src="./이미지/서버_코드.PNG"></img>
   <br>
+  <br>
+  ● **class ChattingRoom**
+  => __init__ 메서드는 이것이 바로 파이썬에서 약속된 메서드 가운데 하나로 초기화(initialize) 메서드이다. 어떤 클래스의 객체가 만들어질 때 
+  자동으로 호출되어서 그 객체가 갖게 될 여러 가지 성질을 정해주는 일을 한다. self.list란 클라이언트의 정보를 담을 리스트이다.<br>
+  ==> addUser(self,client) 메서드에서는 클라이언트에서 입력한 정보를 받아와 self.list에 클라이언트(사용자)를 추가해 준다.  
  <img width="" height="" src="./이미지/서버_코드2.PNG"></img>
   **<클라이언트 코드 분석>**<br>
   <img width="" height="" src="./이미지/클라이언트_코드.PNG"></img>
