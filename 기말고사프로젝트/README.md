@@ -18,7 +18,7 @@
  ### 3. 설계 및 기능
   채팅 프로그램은 멀티 쓰레드 방식을 이용하여 여러 사람이 실시간으로 채팅할 수 있도록 구현하였다.<br>
   **<서버 코드 분석>**<br>
- <img width="" height="" src="./이미지/서버_코드.PNG"></img>
+ <img width="" height="" src="./이미지/서버_코드_1.PNG"></img>
   <br>
   <br>
   ● **class ChattingRoom**<br><br>
@@ -33,7 +33,7 @@
    => recvMessage 메서드에서는 recv 함수를 이용하여 클라이언트 소켓을 거친 최대 크기가 1024인 메세지 정보를 받아 decoding 작업을 우선적으로 진행한다. 만약 클라이언트(사용자)가 보낸 메세지 정보가 '/quit'라면 ChatClient 클래스 안의 sendMessage 메서드를 통해 현재 채팅방 사용자들에게 메세지를 보낸 후 서버와 클라이언트들에게 '/quit' 메세지를 보낸 클라이언트가 퇴장되었다는 알림을 보여준다. '/quit'가 아니라면 클라이언트의 닉네임과 함께 메세지를 함께 채팅방 내의 클라이언트(사용자)들에게 출력해 보여준다.<br><br>
    => sendMessage 메서드에서는 클라이언트의 메세지 정보를 받아 encode 작업을 진행 후 모든 사용자들에게 보내는 작업을 한다.<br><br>
    => run 메서드에서는 파이썬에서 쓰레드를 실행하기 위해서 threading 모듈의 Thread() 함수를 호출하여 Thread 객체를 얻은 후 Thread  객체의start() 메서드를 호출한다.<br><br>
- <img width="" height="" src="./이미지/서버_코드2.PNG"></img>
+ <img width="" height="" src="./이미지/서버_코드_2.PNG"></img>
  <br>
  <br>
   ● **class RunServer**<br><br>
