@@ -52,7 +52,7 @@
   => 'init' 함수로 우선 클라이언트 소캣 정보를 초기화 해준다. 이후 socket 메서드에서 서버와 연결을 위한 IPv4 체계와 TCP 타입 소켓 객체를 생성하고, 이후 ip와 port 번호를 통해 연결한다.
   
  ### 4. 실행 결과 화면
+  <img width="" height="" src="./이미지/실행결과.PNG"></img><br>
   <img width="" height="" src="./이미지/실행결과_1.PNG"></img><br>
-  <img width="" height="" src="./이미지/실행결과_2.PNG"></img><br>
    
  
