@@ -17,7 +17,7 @@
  ### 3. 설계 및 기능
   채팅 프로그램은 멀티 쓰레드 방식을 이용하여 여러 사람이 실시간으로 채팅할 수 있도록 구현하였다.<br>
   **<서버 코드 분석>**<br>
- <img width="" height="" src="./이미지/서버_코드_1.PNG"></img>
+ <img width="" height="" src="./기말고사프로젝트/이미지/서버_코드_1.PNG"></img>
   <br>
   <br>
   ● **class ChattingRoom**<br><br>
@@ -32,7 +32,7 @@
    => recvMessage 메서드에서는 recv 함수를 이용하여 클라이언트 소켓을 거친 최대 크기가 1024인 메세지 정보를 받아 decoding 작업을 우선적으로 진행한다. 만약 클라이언트(사용자)가 보낸 메세지 정보가 '/quit'라면 ChatClient 클래스 안의 sendMessage 메서드를 통해 현재 채팅방 사용자들에게 메세지를 보낸 후 서버와 클라이언트들에게 '/quit' 메세지를 보낸 클라이언트가 퇴장되었다는 알림을 보여준다. '/quit'가 아니라면 클라이언트의 닉네임과 함께 메세지를 함께 채팅방 내의 클라이언트(사용자)들에게 출력해 보여준다.<br><br>
    => sendMessage 메서드에서는 클라이언트의 메세지 정보를 받아 encode 작업을 진행 후 모든 사용자들에게 보내는 작업을 한다.<br><br>
    => run 메서드에서는 파이썬에서 쓰레드를 실행하기 위해서 threading 모듈의 Thread() 함수를 호출하여 Thread 객체를 얻은 후 Thread  객체의 start() 메서드를 호출한다.<br><br>
- <img width="" height="" src="./이미지/서버_코드_2.PNG"></img>
+ <img width="" height="" src="./기말고사프로젝트/이미지/서버_코드_2.PNG"></img>
  <br>
  <br>
   ● **class RunServer**<br><br>
@@ -41,7 +41,7 @@
   이후 클라이언트의 닉네임 정보와 소켓 정보를 받아 ChattingRoom 클래스의 addUser 메서드로 정보를 반환해주어 self.list에 클라이언트를 추가한다. 
 
   **<클라이언트 코드 분석>**<br>
-  <img width="" height="" src="./이미지/클라이언트_코드_1.PNG"></img>
+  <img width="" height="" src="./기말고사프로젝트/이미지/클라이언트_코드_1.PNG"></img>
   <br>
   <br>
   => 우선 ip 와 port를 전역 변수로 선언해준다. <br>
@@ -51,8 +51,8 @@
   => 'init' 함수로 우선 클라이언트 소캣 정보를 초기화 해준다. 이후 socket 메서드에서 서버와 연결을 위한 IPv4 체계와 TCP 타입 소켓 객체를 생성하고, 이후 ip와 port 번호를 통해 연결한다.
   
  ### 4. 실행 결과 화면
-  <img width="" height="" src="./이미지/실행결과.PNG"></img><br>
-  <img width="" height="" src="./이미지/실행결과_1.PNG"></img><br><br>
+  <img width="" height="" src="./기말고사프로젝트/이미지/실행결과.PNG"></img><br>
+  <img width="" height="" src="./기말고사프로젝트/이미지/실행결과_1.PNG"></img><br><br>
   
   ### 5. 구현할 때 어려웠던 점
    우선 구현하는데 오랜 기간 시간을 투자했음에도 불구하고 독자적으로 프로그램을 구현하는데에 큰 한계를 느끼게 되었고, 결국 초기에 구상했던 기능들과 GUI를 구현하지 못하였다. 특히 GUI는 파이썬 내의 GUI 인터페이스인 'tkinter'를 이용하여 구현할 예정이었는데, tkinter 구현 코드와 함께 프로그램을 구동하게 되면 'Tkinter tclError couldn't connect to display :0.0'라는 오류가 발생하며 tkinter 인터페이스를 호출하지 못하였다.
